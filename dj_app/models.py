@@ -19,7 +19,7 @@ class Post(models.Model):
 
 class Add(models.Model):
     topic = models.CharField(max_length=100)
-    conent = models.TextField()
+    content = models.TextField()
 
     def __str__(self):
         return self.topic

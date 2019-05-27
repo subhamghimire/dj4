@@ -1,17 +1,47 @@
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static "css/style.css" %}">
   <title>DJ_App</title>
 </head>
 <body>
-
+  <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+  <!--{{ hkey}}-->
 <h2>Help page</h2>
-{{ hkey }}
+<div>
+{% if posts %}
+<table>
+  <thead>
+    <th>Post Title</th>
+    <th>Author id</th>
+  </thead>
+{% for acc in posts %}
+<tr>
+  <td>{{ acc.title }}</td>
+  <td>{{ acc.author_id }}</td>
+</tr>
+{% endfor %}
+</table>
+{% else %}
+<p>No access found!</p>
+{% endif %}
+</div>
 <div class="picture">
 <img src="{% static 'img/im.png' %}" alt="test-image">
 </div>
