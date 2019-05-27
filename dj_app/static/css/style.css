@@ -1,0 +1,9 @@
+*{
+  margin:0px;
+  padding: 0px;
+}
+
+.picture img{
+  height: 600px;
+  width: 1000px;
+}
